@@ -47,6 +47,7 @@ import React, { useState, useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
+import Map from './components/Map';
 import './App.css';
 
 const App = () => {
@@ -62,7 +63,7 @@ const App = () => {
     <Routes>
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login setAuthenticated={setAuthenticated} />} />
-      <Route path="/" element={authenticated ? <h1>Welcome to Vehicle Tracking App</h1> : <Navigate to="/login" />} />
+      <Route path="/" element={authenticated ? <Map /> : <Navigate to="/login" />} />
     </Routes>
   );
 };
